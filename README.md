@@ -1,7 +1,7 @@
 # anime-ml-webapp
 
 Simple webapp that uses the models in anime-ml repo https://github.com/HWaiChan/anime-ml. 
-We can query similar anime shows using various shows such as Baseline, nearest neighbors (kNN) and matrix factorisation techniques.
+We can query similar anime shows using various techniques such as Baseline, nearest neighbors (kNN) and matrix factorisation.
 
 
 ## Architecture
