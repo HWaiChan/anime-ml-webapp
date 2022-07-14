@@ -8,15 +8,17 @@
   </head>
   <body>
     <h1>Anime Recommender</h1>
-    <p>nice</p>
+    <p>
+      The titles has to match exactly how it is on
+      <a href="https://myanimelist.net/">MyAnimeList</a>
+    </p>
     <form action="/" method="POST">
-      <input type="text" name="anime_show" id="" placeholder="Naruto" />
+      <input type="text" name="anime_show" id="" placeholder="Anime title" />
       <input type="submit" />
     </form>
 
     {% if shows %}
     <p>Similar shows to this:</p>
-    {{shows}}
-    {% endif %}
+    {{shows}} {% endif %}
   </body>
 </html>
