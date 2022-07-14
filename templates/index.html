@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Recommender</title>
+  </head>
+  <body>
+    <h1>Anime Recommender</h1>
+    <p>nice</p>
+    <form action="/" method="POST">
+      <input type="text" name="anime_show" id="" placeholder="Naruto" />
+      <input type="submit" />
+    </form>
+
+    {% if shows %}
+    <p>Similar shows to this:</p>
+    {{shows}} {% endif %}
+  </body>
+</html>
