@@ -8,6 +8,11 @@ We can query similar anime shows using various techniques such as Baseline, near
 
 JS FE <-----> python BE (with the models to load)
 
+## Next
+- CI/CD with Heroku (Need to set up the basic MLOps using dvc-gdrive)
+- Introduce React in FE/Client.
+- 
+
 ## Later plans
 
 - A way to pull data (new ratings and animes shows) from MyAnimeList to update models.
