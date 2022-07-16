@@ -7,6 +7,7 @@ model_filename = "./models/model_KNNBasic.pickle"
 
 
 def get_similar_items(anime_name):
+    print(f'Loading model to find similar animes to {anime_name}')
     file_name = os.path.expanduser(model_filename)
     _, loaded_model = dump.load(file_name)
     print(f'{loaded_model.__class__.__name__} loaded.')
