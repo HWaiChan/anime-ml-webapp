@@ -2,13 +2,12 @@ from surprise import dump
 import os
 import pandas as pd
 
-# if "DYNO" in os.environ and os.path.isdir(".dvc"):
-#     os.system("dvc config core.no_scm true")
-#     if os.system(f"dvc pull") != 0:
-#         exit("dvc pull failed")
-#     os.system("rm -r .dvc .apt/usr/lib/dvc")
-model_filename = "./models/model_KNNBasic.pickle"
-model_lite_filename = "./models/model_lite_KNNBasic.pickle"
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system(f"dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
+model_lite_filename = "model_lite_KNNBasic.pickle"
 file_name = os.path.expanduser(model_lite_filename)
 _, loaded_model = dump.load(file_name)
 print(f"{loaded_model.__class__.__name__} loaded.")
