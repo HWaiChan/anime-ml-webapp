@@ -128,3 +128,4 @@ dmypy.json
 .pyre/
 models/
 /models
+/model_lite_KNNBasic.pickle

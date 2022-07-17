@@ -1,0 +1,4 @@
+outs:
+- md5: dbc605c2c60f96417f246094eff02607
+  size: 339243108
+  path: model_lite_KNNBasic.pickle
