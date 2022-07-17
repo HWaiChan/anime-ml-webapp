@@ -5,12 +5,12 @@ import pandas as pd
 
 model_filename = "./models/model_KNNBasic.pickle"
 model_lite_filename = "./models/model_lite_KNNBasic.pickle"
+file_name = os.path.expanduser(model_lite_filename)
+_, loaded_model = dump.load(file_name)
+print(f"{loaded_model.__class__.__name__} loaded.")
 
 
 def get_similar_items(anime_name):
-    file_name = os.path.expanduser(model_lite_filename)
-    _, loaded_model = dump.load(file_name)
-    print(f"{loaded_model.__class__.__name__} loaded.")
     return extract_similar_items_from_model(loaded_model, anime_name)["Title"].tolist()
 
 
