@@ -22,8 +22,9 @@ jobs:
           python -m pip install --upgrade pip
 
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Get models
+      - name: Set up DVC
         uses: iterative/setup-dvc@v1
+      - name: Get models
         run: |
           dvc config core.no_scm true
           if [ -d .dvc ]; then dvc pull; fi
