@@ -4,7 +4,7 @@ import pandas as pd
 
 
 model_filename = "./models/model_KNNBasic.pickle"
-model_lite_filename = "models\model_lite_KNNBasic.pickle"
+model_lite_filename = "./models/model_lite_KNNBasic.pickle"
 
 
 def get_similar_items(anime_name):
