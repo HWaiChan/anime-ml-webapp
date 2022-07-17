@@ -22,12 +22,12 @@ steps:
       python -m pip install --upgrade pip
 
       if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-steps:
-  - uses: actions/checkout@v2
+  - name: Get models
+    run: | 
+      dvc config core.no_scm true
+      if [ -d .dvc ]; then dvc pull; fi
 
-  - uses: iterative/setup-dvc@v1
-
-- name: Deploy to Heroku
+  - name: Deploy to Heroku
       env:
         HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
