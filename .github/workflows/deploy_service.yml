@@ -8,6 +8,7 @@ on:
     paths:
     - '.dvc/**'
     - '.github/workflows/deploy_service.yml'
+    - '**.dvc'
 
 jobs:
   build:
