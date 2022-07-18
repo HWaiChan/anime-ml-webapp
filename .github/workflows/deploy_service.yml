@@ -21,7 +21,7 @@ jobs:
     - name: Checkout data (DVC)
       run: |
         pip install dvc[gdrive]
-        dvc remote modify myremote gdrive_use_service_account true
+        echo "pip install complete."
         dvc pull
       env:
         GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
