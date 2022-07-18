@@ -21,7 +21,6 @@ jobs:
     - name: Checkout data (DVC)
       run: |
         pip install dvc[gdrive]
-        dvc remote add --default myremote gdrive://1gKCvykipt4rPBttJcEQKmrXI8Gk16949
         dvc remote modify myremote gdrive_use_service_account true
         dvc pull
       env:
