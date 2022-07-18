@@ -19,10 +19,11 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: 3.7
+    - name: Set up dvc
+      uses: iterative/setup-dvc@v1
     - name: Checkout data (DVC)
       run: |
-        pip install dvc[gdrive]
-        echo "pip install complete."
+        echo "dvc pull -v starting"
         dvc pull -v
       env:
         GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
