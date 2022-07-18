@@ -23,7 +23,6 @@ jobs:
       uses: iterative/setup-dvc@v1
     - name: Checkout data (DVC)
       run: |
-        pip install dvc
         mkdir -p .dvc/tmp
         dvc remote modify myremote gdrive_use_service_account true
         echo '${{ secrets.GDRIVE_CREDENTIALS_DATA }}' > .dvc/tmp/credentials.json
