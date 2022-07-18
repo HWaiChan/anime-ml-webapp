@@ -1,0 +1,42 @@
+name: Deploy service
+
+# on merge
+on:
+  push:
+    branches:
+      - main
+    paths:
+    - '.dvc/**'
+    - '.github/workflows/deploy_service.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: serving
+    steps:
+    - uses: actions/checkout@v1
+    - name: Login to Heroku
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:login
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Checkout data (DVC)
+      run: |
+        pip install dvc[gdrive]
+        dvc pull
+      env:
+        GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+    - name: Build and push
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_APP: ${{ secrets.HEROKU_APP }}
+      run: heroku container:push -a $HEROKU_APP web
+    - name: Release
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_APP: ${{ secrets.HEROKU_APP }}
+      run: heroku container:release -a $HEROKU_APP web
