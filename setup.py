@@ -4,7 +4,7 @@ import os
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
     gdrive_data = os.getenv("GDRIVE_CREDENTIALS_DATA")
-    f = open(".dvc/tmp/credentials.json", "a")
+    f = open(".dvc/tmp/credentials.json", "w")
     f.write(gdrive_data)
     f.close()
     os.system(
