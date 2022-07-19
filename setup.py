@@ -16,5 +16,6 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
         exit("dvc pull failed")
     if os.path.exists("model_lite_KNNBasic.pickle"):
         print("model_lite_KNNBasic.pickle exists")
+        os.system("rm -r .dvc .apt/usr/lib/dvc")
     else:
         print("model_lite_KNNBasic.pickle doesn't exist")
