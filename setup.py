@@ -14,3 +14,7 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
     )
     if os.system(f"dvc pull") != 0:
         exit("dvc pull failed")
+    if os.path.exists("model_lite_KNNBasic.pickle"):
+        print("model_lite_KNNBasic.pickle exists")
+    else:
+        print("model_lite_KNNBasic.pickle doesn't exist")
