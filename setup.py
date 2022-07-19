@@ -1,8 +1,10 @@
 import os
+from pathlib import Path
 
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
+    Path(".dvc/tmp").mkdir(parents=True, exist_ok=True)
     gdrive_data = os.getenv("GDRIVE_CREDENTIALS_DATA")
     f = open(".dvc/tmp/credentials.json", "w")
     f.write(gdrive_data)
