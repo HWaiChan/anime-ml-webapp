@@ -16,6 +16,9 @@ if __name__ == "__main__":
             exit("dvc pull failed")
         if os.path.exists("model_lite_KNNBasic.pickle"):
             print("model_lite_KNNBasic.pickle exists")
-            os.system("rm -r .dvc .apt/usr/lib/dvc")
+            try:
+                os.system("rm -r .dvc .apt/usr/lib/dvc")
+            except OSError as error:
+                print("OS Error: {0}".format(error))
         else:
             print("model_lite_KNNBasic.pickle doesn't exist")
