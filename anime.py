@@ -3,11 +3,11 @@ import os
 import pandas as pd
 import surprise
 
-# model_lite_filename = "model_lite_KNNBasic.pickle"
-# file_name = os.path.expanduser(model_lite_filename)
-# _, loaded_model = dump.load(file_name)
-# print(f"{loaded_model.__class__.__name__} loaded.")
-loaded_model = surprise.KNNBaseline()
+ model_lite_filename = "model_lite_KNNBasic.pickle"
+ file_name = os.path.expanduser(model_lite_filename)
+ _, loaded_model = dump.load(file_name)
+ print(f"{loaded_model.__class__.__name__} loaded.")
+#loaded_model = surprise.KNNBaseline()
 
 def get_similar_items(anime_name):
     return ["This tool doesn't work as heroku free tier cannot support the size of my model. Visit https://huggingface.co/spaces/NomiWai/anime-collaborative-filtering-space for a working MVP"]

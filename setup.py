@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 if __name__ == "__main__":
-    if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    if os.path.isdir(".dvc"):
         os.system("dvc config core.no_scm true")
         Path(".dvc/tmp").mkdir(parents=True, exist_ok=True)
         gdrive_data = os.getenv("GDRIVE_CREDENTIALS_DATA")
