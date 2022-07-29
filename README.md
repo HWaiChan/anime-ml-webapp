@@ -11,6 +11,7 @@ JS FE <-----> python BE (with the models to load)
 ## Next
 - Introduce React in FE/Client.
 - Connectivity to Hugging Face
+- Try AWS CodeDeploy to deploy to AWS EC2 and AWS S3 to store the model
 
 ## Things I have tried and given up
 ### Heroku dyno to load up model
