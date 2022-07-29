@@ -1,4 +1,5 @@
 #!/bin/sh
+pip install dvc[gdrive]
 mkdir -p .dvc/tmp
 dvc remote modify myremote gdrive_use_service_account true
 echo "${GDRIVE_CREDENTIALS_DATA}" > .dvc/tmp/credentials.json
