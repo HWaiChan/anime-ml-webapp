@@ -1,1 +1,1 @@
-web: python setup.py &&gunicorn --bind 0.0.0.0:$PORT app:app
+web: python setup.py && gunicorn --bind :8000 app:app
